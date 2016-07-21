@@ -4,6 +4,7 @@
  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
  gem 'rails', '4.2.5'
  gem 'bootstrap-sass'
+ gem 'devise'
 
 
 
@@ -21,7 +22,6 @@
  gem 'coffee-rails', '~> 4.1.0'
  gem 'jquery-rails'
  gem 'turbolinks'
- gem 'bootstrap'
  gem 'figaro'
  gem 'pry'
 
