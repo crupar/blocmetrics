@@ -6,6 +6,7 @@ class RegisteredApplicationsController < ApplicationController
 
   def show
     @registered_application = RegisteredApplication.find(params[:id])
+    @events = @registered_application.events.group_by(&:name)
   end
 
   def new
@@ -40,7 +41,7 @@ class RegisteredApplicationsController < ApplicationController
 
   def update
     @registered_application = RegisteredApplication.find(params[:id])
-    @registered_application.assign_attributes(wikipage_params)
+    @registered_application.assign_attributes(registered_application_params)
 
     if @registered_application.save
       flash[:notice] = "Entry was updated successfully."
