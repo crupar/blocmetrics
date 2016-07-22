@@ -1,0 +1,31 @@
+<h1>Edit Applications</h1>
+<div class="row">
+
+<div class="col-md-8">
+  <%= form_for @registered_application do |f| %>
+  <% if @registered_application.errors.any? %>
+    <div class="alert alert-danger">
+      <h4><%=pluralize(@registered_application.errors.count, "error") %>.</h4>
+      <ul>
+        <% @registered_application.errors.full_messages.each do |msg| %>
+          <li><%=msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_group_tag(@registered_application.errors[:name]) do %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control', placeholder: "Enter application name" %>
+    </div>
+
+  <div class="form-group">
+    <%= f.label :url %>
+    <%= f.url_field :url, class: 'form-control', placeholder: "Enter application url" %>
+  </div>
+
+    <p><%= f.submit "Save", class: 'btn btn-success' %></p>
+    <p><%= link_to "Delete Application", @registered_application, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this entry?' } %></p>
+<% end %>
+<% end %>

@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
+
   devise_for :users
-
-  root 'welcome#index'
   get 'about' => 'welcome#about'
-  resources :welcome
-  resources :user
 
 
+  resources :registered_applications
+
+  authenticated :user do
+    root to: 'welcome#index', as: :authenticated_root
+  end
+  root 'welcome#index'
+
+  
 
 end
