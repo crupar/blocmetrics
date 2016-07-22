@@ -28,4 +28,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-<% end %>
+  <% end %>
+  <p><%= link_to "Delete Application", @registered_application, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this entry?' } %></p>

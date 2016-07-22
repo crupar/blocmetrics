@@ -6,8 +6,3 @@
 
   <%= link_to 'Show Current Application', @registered_application %> |
   <%= link_to 'Back To All Registered Applications', registered_applications_path %>
-
-    <p><%= f.submit "Save", class: 'btn btn-success' %></p>
-    <p><%= link_to "Delete Application", @registered_application, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this entry?' } %></p>
-<% end %>
-<% end %>
