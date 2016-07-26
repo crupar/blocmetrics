@@ -9,7 +9,8 @@ Event.destroy_all
     User.create!(
       username: Faker::Internet.user_name,
       email: Faker::Internet.email,
-      password: Faker::Internet.password(6)
+      password: Faker::Internet.password(6),
+      role: standard
   )
 end
 users = User.all
@@ -19,7 +20,7 @@ users = User.all
   RegisteredApplication.create!(
     name:  Faker::App.name,
     url:   Faker::Internet.url,
-    user:   users.sample
+    user:  users.sample
   )
 end
 registered_application = RegisteredApplication.all
@@ -37,6 +38,13 @@ User.create!(
   email: "carolyntestingcode@gmail.com",
   password: "helloworld",
 )
+
+User.create!(
+  username: "admin",
+  email: "admin@blocmetrics.com",
+  password: "helloworld",
+)
+
 
 
 
